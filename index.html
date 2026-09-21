@@ -1,46 +1,291 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-<h2>Ideia de projeto:</h2>
-<p>Esse trabalho é um site de marketplace e comunidade digital focado no nicho de artesanato, como crochê, tricô, costura, bordado, bijuterias, etc. Ele unirá artesãos e entusiastas de artesanato, permitindo que eles se cadastrem, vendam receitas, tutoriais e padrões, e compartilhem seus projetos, em andamento ou completos, de forma que cada usuário pode manter seu perfil como um portfóli ode todas as suas criações, compartilhando técnicas novas, dicas e inspirações.</p>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page Title</title>
+  </head>
 
-<h2>Primeira tabela (Receita):</h2>
-<table border="1" width="50%">
-	<tr>
-    	<td>Código</td>
-        <td>Nome</td>
-        <td>Tipo de Artesanato</td>
-        <td>Criador</td>
-        <td>Descrição</td>
-        <td>Lista de Materiais</td>
-        <td>Data</td>
-        <td>Mídia</td>
-        <td>Preço</td>
-        <td>Link do tutorial</td>
-        <td>PDF da Receita</td>
-    </tr>
-    <tr>
-    	<td>12321HGC256</td>
-        <td>Pikachu</td>
-        <td>Crochê</td>
-        <td>AkaiRoi</td>
-        <td>Personagem de pokemon feito de crochê</td>
-        <td>1 novelo amigurumi circulo cor canário, 1 novelo amigurumi circulo cor cereja, 1 novelo amigurumi circulo cor branco, 1 novelo amigurumi circulo cor preto, 1 enchimento, 1 agulha 2,5mm.
-    	</td>
-    	<td>16/09/2026</td>
-        <td>
-        	<img src="https://i.pinimg.com/originals/6b/70/3d/6b703df8f75caf17c14744c17c0b573e.jpg" width="100" height="100"></img>
-        </td>
-        <td>R$10,00</td>
-        <td>
-        	<iframe width="133" height="100" src="https://www.youtube.com/embed/RAe7kbfgePA?autoplay=1">O video não pde ser tocado</iframe>
-        </td>
-</table>
-
-</body>
+  <body>
+    <div>
+      <h1>Ideia de projeto:</h1>
+      <p>
+        Esse trabalho é um site de marketplace e comunidade digital focado no
+        nicho de artesanato, como crochê, tricô, costura, bordado, bijuterias,
+        etc. Ele unirá artesãos e entusiastas de artesanato, permitindo que eles
+        se cadastrem, vendam receitas, tutoriais e padrões, e compartilhem seus
+        projetos, em andamento ou completos, de forma que cada usuário pode
+        manter seu perfil como um portfólio de todas as suas criações,
+        compartilhando técnicas novas, dicas e inspirações.
+      </p>
+    </div>
+    <br />
+    <div>
+      <h2>Primeira tabela (Receita):</h2>
+      <table border="1" width="50%">
+        <tr>
+          <td>Código</td>
+          <td>Nome</td>
+          <td>Tipo de Artesanato</td>
+          <td>Criador</td>
+          <td>Descrição</td>
+          <td>Lista de Materiais</td>
+          <td>Data</td>
+          <td>Mídia</td>
+          <td>Preço</td>
+          <td>Link do tutorial</td>
+          <td>PDF da Receita</td>
+        </tr>
+        <tr>
+          <td>12321HGC256</td>
+          <td>Pikachu</td>
+          <td>Crochê</td>
+          <td>AkaiRoi</td>
+          <td>Personagem de pokemon feito de crochê</td>
+          <td>
+            1 novelo amigurumi circulo cor canário, 1 novelo amigurumi circulo
+            cor cereja, 1 novelo amigurumi circulo cor branco, 1 novelo
+            amigurumi circulo cor preto, 1 enchimento, 1 agulha 2,5mm.
+          </td>
+          <td>16/09/2026</td>
+          <td>
+            <img
+              src="https://i.pinimg.com/originals/6b/70/3d/6b703df8f75caf17c14744c17c0b573e.jpg"
+              width="100"
+              height="100"
+            />
+          </td>
+          <td>R$10,00</td>
+          <td>
+            <iframe
+              width="133"
+              height="100"
+              src="https://www.youtube.com/embed/RAe7kbfgePA?autoplay=1"
+              >O video não pde ser tocado</iframe
+            >
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <form method="post">
+      <label for="user">Nome:</label>
+      <input
+        type="text"
+        name="usuario"
+        id="user"
+        placeholder="Nome e sobrenome"
+        required
+      />
+      <br />
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="mail@mail.com required"
+      />
+      <br />
+      <label for="password">Senha:</label>
+      <input
+        type="password"
+        name="senha"
+        id="password"
+        placeholder="De 6 a 12 caracteres"
+        required
+      />
+      <br />
+      <label for="website">Website:</label>
+      <input
+        type="url"
+        name="website"
+        id="website"
+        placeholder="Informe o Website"
+      />
+      <br />
+      <input type="submit" value="Entrar" />
+      <input type="reset" value="Limpar" />
+    </form>
+    <br />
+    <form method="post">
+      <fieldset>
+        <legend><b>Informações Pessoais:</b></legend>
+        Foto: <br />
+        <input
+          type="file"
+          name="profilePhoto"
+          id="profilePhoto"
+          accept="image/*"
+        />
+        <br />
+        Nome: <br />
+        <input type="text" name="usuario" id="user" /><br />
+        Email: <br />
+        <input type="email" name="email" id="email" readonly /><br />
+        Telefone: <br />
+        <input type="text" name="phoneNumber" id="phoneNumber" /><br />
+        Data de Nascimento: <br />
+        <input type="date" name="birthday" id="birthday" /> <br />
+        Estado Civil: <br />
+        <select name="maritalStatus" id="maritalStatus">
+          <option value="" selected disabled>Estado Civil</option>
+          <option value="single">Solteiro(a)</option>
+          <option value="married">Casado(a)</option>
+          <option value="divorced">Divorciado(a)</option>
+          <option value="widowed">Viúvo(a)</option>
+        </select>
+        Sexo: <br />
+        <input type="radio" name="gender" value="male" />Masculino <br />
+        <input type="radio" name="gender" value="female" />Feminino <br />
+        <input type="radio" name="gender" value="other" />Outro <br />
+      </fieldset>
+      <fieldset>
+        <legend><b>Informações Comerciais:</b></legend>
+        Foto: <br />
+        <input
+          type="file"
+          name="businessPhoto"
+          id="businessPhoto"
+          accept="image/*"
+        />
+        <br />
+        Nome da loja: <br />
+        <input type="text" name="usuario" id="user" /><br />
+        Email de Contato: <br />
+        <input type="email" name="email" id="email" /><br />
+        Telefone Comercial: <br />
+        <input type="text" name="phoneNumber" id="phoneNumber" /><br />
+        <fieldset>
+          <legend><b>Endereço:</b></legend>
+          País: <br />
+          <select name="country" id="country">
+            <option value="" selected disabled>Selecione um país</option>
+            <option value="BR">Brasil</option>
+          </select>
+          <br />
+          Estado: <br />
+          <select name="state" id="state">
+            <option value="" selected disabled>Selecione o estado</option>
+            <optgroup label="Região Norte">
+              <option value="AC">Acre</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="PA">Pará</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="TO">Tocantins</option>
+            </optgroup>
+            <optgroup label="Região Nordeste">
+              <option value="AL">Alagoas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="MA">Maranhão</option>
+              <option value="PB">Paraíba</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="SE">Sergipe</option>
+            </optgroup>
+            <optgroup label="Região Centro-Oeste">
+              <option value="DF">Distrito Federal</option>
+              <option value="GO">Goiás</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+            </optgroup>
+          </select>
+          <br />
+          Logradouro: <br />
+          <input
+            type="text"
+            name="address"
+            id="address"
+            placeholder="Endereço completo"
+          />
+          <br />
+          Complemento: <br />
+          <input
+            type="text"
+            name="complement"
+            id="complement"
+            placeholder="Complemento, caso tenha"
+          />
+          <br />
+        </fieldset>
+        Website: <br />
+        <input type="url" name="website" id="website" /> <br />
+        Descrição: <br />
+        <textarea
+          name="storeDescription"
+          id="storeDescription"
+          rows="10"
+          cols="50"
+        ></textarea>
+        <br />
+        <input type="submit" value="Salvar dados" />
+      </fieldset>
+    </form>
+    <br />
+    <form method="post">
+      Nome: <br />
+      <input
+        type="text"
+        name="product"
+        id="product"
+        placeholder="Título do produto"
+        required
+      />
+      <br />
+      Tipo: <br />
+      <select name="type" id="type" required>
+        <option value="" selected disabled>Selecione o tipo</option>
+        <option value="tailoring">Costura</option>
+        <option value="crochet">Crochê</option>
+        <option value="knitting">Tricô</option>
+        <option value="painting">Pintura</option>
+        <option value="ceramics">Cerâmica</option>
+        <option value="other">Outro</option>
+      </select>
+      <br />
+      Resumo: <br />
+      <input type="text" name="summary" id="summary required" /> <br />
+      Preço: <br />
+      <input type="number" name="price" id="price" /> <br />
+      Mídia: <br />
+      <input type="file" name="midia" id="midia" accept="image/*" /> <br />
+      Video <br />
+      <input
+        type="url"
+        name="video"
+        id="video"
+        placeholder="Informe o link do video"
+      />
+      <br />
+      PDF: <br />
+      <input type="file" name="pdf" id="pdf" accept="application/pdf" /> <br />
+      Descrição: <br />
+      <textarea
+        name="description"
+        id="description"
+        rows="10"
+        cols="50"
+      ></textarea>
+      <br />
+      Materiais 01: <br />
+      <textarea name="materials" id="materials" rows="3" cols="50"></textarea>
+      <br />
+      <div>
+        Lista de Materiais 02: <br />
+        <input type="text" name="materialsList" id="materialsList" /> <br />
+        <br />
+        <input type="text" name="materialsList" id="materialsList" /> <br />
+        <br />
+        <input type="text" name="materialsList" id="materialsList" /> <br />
+        <br />
+        <input type="text" name="materialsList" id="materialsList" /> <br />
+        <br />
+        <input type="text" name="materialsList" id="materialsList" /> <br />
+      </div>
+      <br />
+      <button type="submit">Cadastrar Produto</button>
+    </form>
+  </body>
 </html>
-
-
