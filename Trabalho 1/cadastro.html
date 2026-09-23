@@ -1,95 +1,212 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-  	<title>Formulário de Cadastro no Site CriArte</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro: Usuário</title>
   </head>
   <body>
-    <header>
-        <h1>CriArte</h1>
-        <nav>
-            <a href="perfil.html">Início</a> |
-            <a href="contato.html">Contato</a> 
-        </nav>
-    </header>
-    <hr>
-    <form method="post">
-      <label for="user">Usuário:</label>
-      <input
-        type="text"
-        name="username"
-        id="user"
-        placeholder="User"
-        required
-      />
-      <br />
-      <label for="user">Nome:</label>
-      <input
-        type="text"
-        name="usuario"
-        id="user"
-        placeholder="Nome e sobrenome"
-        required
-      />
-      <br />
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="mail@mail.com required"
-        required
-      />
-      <br />
-      <label for="password">Senha:</label>
-      <input
-        type="password"
-        name="senha"
-        id="password"
-        placeholder="De 6 a 12 caracteres"
-        required
-      />
-      <br />
-      Foto: <br />
+  <header>
+    <h1>CriArte</h1>
+    <nav>
+      <a href="perfil.html">Início</a> |
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+    <form
+      action="placeholderTratemento"
+      method="post"
+      enctype="multipart/form-data"
+      style="
+        background-color: pink;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 3px;
+      "
+    >
+      <fieldset>
+        <legend>Cadastro de Usuário</legend>
+        <label for="user">Nome: </label>
+        <br>
+        <input
+          type="text"
+          name="user"
+          placeholder="Inserir nome identificador"
+          id="user"
+          required
+        />
+        <br>
+        <label for="usuario">Usuário </label>
+        <br>
+        <input
+          type="text"
+          name="Usuário"
+          placeholder="Inserir usuário"
+          id="usuario"
+          required
+        />
+        <br>
+        <p>Gênero:</p>
+        <input
+          type="radio"
+          name="sexo"
+          id="masculino"
+          value="masculino"
+          required
+        />
+        <label for="masculino">Masculino</label>
+        <input
+          type="radio"
+          name="sexo"
+          id="feminino"
+          value="feminino"
+          required
+        />
+        <label for="feminino">Feminino</label>
+        <input type="radio" name="sexo" id="outro" value="outro" required />
+        <label for="outro">Outro / Prefiro não informar</label>
+        <br>
+        <label for="email">Email: </label>
+        <br>
+        <input
+          type="email"
+          name="email"
+          placeholder="exemplo@exemplo.com"
+          id="email"
+        />
+        <br>
+        <label for="senha">Senha: </label>
+        <br>
+        <input
+          type="password"
+          name="senha"
+          placeholder="Inserir senha"
+          id="senha"
+          required
+        />
+        <br>
+        <label for="telefone">Contato: </label>
+        <br>
+        <input
+          type="tel"
+          name="telefone"
+          placeholder="Inserir número de telefone"
+          id="telefone"
+        />
+        <br>
+        <label for="perfil">Imagem de Perfil</label>
+        <br>
         <input
           type="file"
-          name="profilePhoto"
-          id="profilePhoto"
-          accept="image/*"
+          name="perfil"
+          id="perfil"
+          accept="image/png, image/jpeg"
         />
-       <br />
-       Data de Nascimento: <br />
-        <input type="date" name="birthday" id="birthday" /> <br />
-        Sexo: <br />
-        <input type="radio" name="gender" value="male" />Masculino <br />
-        <input type="radio" name="gender" value="female" />Feminino <br />
-        <input type="radio" name="gender" value="other" />Outro <br />
-      Biografia: <br />
+        <br>
+        Habilidades:
+        <select name="type" id="type" required>
+          <option value="" selected disabled>Selecione a habilidade</option>
+          <option value="tailoring">Costura</option>
+          <option value="crochet">Crochê</option>
+          <option value="knitting">Tricô</option>
+          <option value="painting">Pintura</option>
+          <option value="ceramics">Cerâmica</option>
+          <option value="other">Outro</option>
+        </select>
+        <br>
+        <label for="termos">Aceito os termos de uso da Empresa</label>
+        <input type="checkbox" name="termos" id="termos" required />
+        <br>
+        <button type="submit">Enviar</button>
+        <br>
+        <button type="reset">Resetar</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cadastro da loja</legend>
+        <label for="loja">Nome da Loja: </label>
+        <br>
+        <input
+          type="text"
+          name="loja"
+          placeholder="Inserir noma de loja"
+          id="loja"
+          required
+        />
+        <br>
+        <label for="fotoloja">Imagem de perfil loja: </label>
+        <br>
+        <input
+          type="file"
+          name="fotoloja"
+          id="fotoloja"
+          accept="image/png, image/jpeg"
+        />
+        <br>
+        <label for="descricao"> Descrição: </label>
+        <br>
         <textarea
-          name="storeDescription"
-          id="storeDescription"
-          rows="10"
-          cols="50"
-        ></textarea>
-      <br />Telefone: <input type="text" name="phoneNumber" id="phoneNumber" placeholder="telefone"/><br />
-      Habilidades:
-      <select name="type" id="type" required>
-        <option value="" selected disabled>Selecione a habilidade</option>
-        <option value="tailoring">Costura</option>
-        <option value="crochet">Crochê</option>
-        <option value="knitting">Tricô</option>
-        <option value="painting">Pintura</option>
-        <option value="ceramics">Cerâmica</option>
-        <option value="other">Outro</option>
-      </select>
-      <br />
-      <input type="checkbox" value="Termos" required>
-      Aceito os termos de uso
-      <br />
-      <input type="submit" value="Enviar" />
-      <input type="reset" value="Limpar" />
+          name="descricao"
+          rows="15"
+          cols="40"
+          placeholder="Digite aqui uma breve descrição da sua loja..."
+          id="descricao"
+        >
+        </textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cadastro dos produtos</legend>
+        <br>
+        <label for="produto">Nome: </label>
+        <br>
+        <input
+          type="text"
+          name="produto"
+          id="produto"
+          placeholder="Inserir nome do produto"
+          required
+        />
+        <br>
+        <label for="midia">Ficheiro Multimédia (Imagem ou Vídeo):</label><br>
+        <input type="file" id="midia" name="midia" accept="image/*,video/*" />
+        <br>
+        <label for="preco">Preco: </label>
+        <br>
+        <input type="number" name="preco" id="preco" min="0" step="any" />
+        <br>
+        <label for="descricaoProduto">Descricao: </label>
+        <br>
+        <textarea
+          name="descricaoProduto"
+          id="descricaoProduto"
+          placeholder="Digite a descrição do seu produto..."
+          required
+        >
+        </textarea>
+        <br>
+        <label for="linkTutorial">Link do Tutorial / Produto:</label><br>
+        <input
+          type="url"
+          id="linkTutorial"
+          name="link_tutorial"
+          placeholder="https://placeholder.com"
+        />
+        <br>
+        <label for="pdf">PDF receita: </label>
+        <br>
+        <input
+          type="file"
+          name="pdf"
+          id="pdf"
+          required
+          accept="application/pdf"
+        />
+        <br>
+        <label for="data">Data: </label>
+        <br>
+        <input type="date" name="data" id="data" />
+      </fieldset>
     </form>
-    <br />
   </body>
 </html>
-
-

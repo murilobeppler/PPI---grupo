@@ -1,0 +1,43 @@
+uestão 01: Formulário de cadastro contextualizado (4 pts)
+Crie uma página HTML chamada “cadastro.html” com um formulário para um
+contexto à escolha do grupo. O formulário deve conter os seguintes elementos:
+a) Estrutura:
+ Use a estrutura HTML5 (<!DOCTYPE html>, <html>, <head>, <body>).
+ Defina o título da página de acordo com contexto (ex: "Cadastro - Ti").
+ Defina o idioma da página como português (atributo lang).
+b) Campos:
+ Crie um formulário (<form>) com os seguintes campos contextualizado:
+o Nome da Empresa (campo de texto com type="text").
+o E-mail da Empresa (campo com type="email").
+o Senha da Empresa (campo com type="password").
+o Campo seleção (lista ) relacionado o contexto (ex: "Comidas
+Favoritas" do Restaurante, "Categoria de Produtos" para uma loja).
+o Checkbox com o texto "Aceito os termos de uso da Empresa".
+o Botão de “Envio” do tipo submit.
+o Botão de “Limpar” do tipo reset.
+ Use o atributo name em cada campo para identificá-los.
+c) Validação e Estilo:
+ Adicione o placeholder nos campos texto (ex: "Digite nome da empresa").
+ Torne os campos de nome, e-mail e checkbox obrigatórios.
+ Aplique uma cor de fundo no formulário e outra cor de borda no formulário.
+Questão 02: Página de perfil com tabela e mídia contextualizados (4 pts)
+Crie uma página HTML chamada “perfil.html”, que represente perfil do contexto
+do grupo. Assim, a página deve utilizar os elementos semânticos do HTML5.
+a) Estruturas:
+ Use tags <header>, <nav>, <section> e <footer> para estruturar a página
+ No <header>, inclua título <h1> com o nome do perfil (ex: "Solution") e
+<nav> com dois links de navegação (ex: "inicio", "contato"; etc.); e então
+direcione os links para uma página específica; e.g. “contato.html”.
+ Na <section> principal, adicione descrição do perfil; parágrafo informação
+ No <footer>, inclua no rodapé (ex: "© 2026 - Todos direitos reservados.").
+b) Tabela:
+ Dentro de uma nova <section>, crie uma tabela (<table>) com uma borda
+(border="2") que liste as informações relevantes ao contexto escolhido.
+ A tabela deve ter pelo menos 4 colunas e 4 linhas de dados. Use a
+tag <th> para o cabeçalho das colunas (ex: para uma empresa, colunas
+como "Produto", “Descrição”, "Preço", "Disponibilidade"); seja criativo.
+c) Incorporação de Vídeo:
+ Abaixo da tabela, incorpore vídeo do YouTube usando a tag <iframe>.
+ Se usar um vídeo, copie o código de incorporação do YouTube e ajuste
+o src (ex: vídeo sobre o contexto escolhido).
+ Defina as dimensões do vídeo (640x480).
