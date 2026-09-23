@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+  	<title>Formulário de Cadastro no Site CriArte</title>
+  </head>
+  <body>
+
+    <form method="post">
+      <label for="user">Usuário:</label>
+      <input
+        type="text"
+        name="username"
+        id="user"
+        placeholder="User"
+        required
+      />
+      <br />
+      <label for="user">Nome:</label>
+      <input
+        type="text"
+        name="usuario"
+        id="user"
+        placeholder="Nome e sobrenome"
+        required
+      />
+      <br />
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="mail@mail.com required"
+        required
+      />
+      <br />
+      <label for="password">Senha:</label>
+      <input
+        type="password"
+        name="senha"
+        id="password"
+        placeholder="De 6 a 12 caracteres"
+        required
+      />
+      <br />
+      Foto: <br />
+        <input
+          type="file"
+          name="profilePhoto"
+          id="profilePhoto"
+          accept="image/*"
+        />
+       <br />
+       Data de Nascimento: <br />
+        <input type="date" name="birthday" id="birthday" /> <br />
+        Sexo: <br />
+        <input type="radio" name="gender" value="male" />Masculino <br />
+        <input type="radio" name="gender" value="female" />Feminino <br />
+        <input type="radio" name="gender" value="other" />Outro <br />
+      Biografia: <br />
+        <textarea
+          name="storeDescription"
+          id="storeDescription"
+          rows="10"
+          cols="50"
+        ></textarea>
+      <br />Telefone: <input type="text" name="phoneNumber" id="phoneNumber" placeholder="telefone"/><br />
+      Habilidades:
+      <select name="type" id="type" required>
+        <option value="" selected disabled>Selecione a habilidade</option>
+        <option value="tailoring">Costura</option>
+        <option value="crochet">Crochê</option>
+        <option value="knitting">Tricô</option>
+        <option value="painting">Pintura</option>
+        <option value="ceramics">Cerâmica</option>
+        <option value="other">Outro</option>
+      </select>
+      <br />
+      <input type="checkbox" value="Termos" required>
+      Aceito os termos de uso
+      <br />
+      <input type="submit" value="Enviar" />
+      <input type="reset" value="Limpar" />
+    </form>
+    <br />
+  </body>
+</html>
+
+
