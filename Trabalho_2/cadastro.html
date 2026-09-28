@@ -215,18 +215,18 @@
           type="text"
           name="Matricula"
           id="matricula"
-          placeholder="Inserir noma de loja"
+          placeholder="Inserir matrícula"
           required
         />
         <button type="button" onclick="verificarMatricula()">Verificar</button>
         <p id="idP"></p>
         <img src="" alt="" id="idIMG" />
         <script>
-          var matricula = document.getElementById("matricula").value.trim();
           //console.log(matricula);
-          var imagem = document.getElementById("idIMG");
-          var paragraph = document.getElementById("idP");
           function verificarMatricula() {
+            var matricula = document.getElementById("matricula").value.trim();
+            var imagem = document.getElementById("idIMG");
+            var paragraph = document.getElementById("idP");
             switch (matricula) {
               case "12221BCC037":
                 imagem.src = "images/M.jpg";
