@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="matriculaIFELSE.js"></script>
     <title>Cadastro: Usuário</title>
   </head>
   <body>
@@ -206,6 +207,65 @@
         <label for="data">Data: </label>
         <br />
         <input type="date" name="data" id="data" />
+      </fieldset>
+      <fieldset>
+        <legend>Verifica a matrícula</legend>
+        <label for="matricula">Inserir Matrícula: </label>
+        <input
+          type="text"
+          name="Matricula"
+          id="matricula"
+          placeholder="Inserir noma de loja"
+          required
+        />
+        <button type="button" onclick="verificarMatricula()">Verificar</button>
+        <p id="idP"></p>
+        <img src="" alt="" id="idIMG" />
+        <script>
+          var matricula = document.getElementById("matricula").value.trim();
+          //console.log(matricula);
+          var imagem = document.getElementById("idIMG");
+          var paragraph = document.getElementById("idP");
+          function verificarMatricula() {
+            switch (matricula) {
+              case "12221BCC037":
+                imagem.src = "images/M.jpg";
+                imagem.alt = "Imagem de 12221BCC037";
+                imagem.style.width = "250px";
+                imagem.style.height = "250x";
+                paragraph.innerHTML = "";
+                break;
+
+              case "12321BCC024":
+                break;
+
+              case "12321BCC038":
+                break;
+
+              case "12321BCC043":
+                document.getElementById("idIMG").src = "images/A.jpg";
+                document.getElementById("idIMG").alt = "Imagem de 12321BCC043";
+                document.getElementById("idIMG").style.width = "250px";
+                document.getElementById("idIMG").style.height = "250px";
+                document.getElementById("idP").src = "";
+
+                break;
+
+              case "12311BCC069":
+                break;
+
+              case "Faltou":
+                break;
+
+              default:
+                imagem.src = "";
+                imagem.alt = "";
+                paragraph.innerHTML =
+                  "Matrícula não existe, inserir uma matrícula válida";
+                break;
+            }
+          }
+        </script>
       </fieldset>
     </form>
   </body>
