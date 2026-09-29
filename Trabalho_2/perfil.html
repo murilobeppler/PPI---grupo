@@ -138,45 +138,49 @@
     <br />
     <p id="idP"></p>
 
-    <script>
+<script>
       let matriculas = [
         "12221BCC037",
         "12321BCC024",
         "12321BCC038",
         "12321BCC043",
         "12311BCC069",
-        "Faltou",
+        "12111BSI285",
       ];
       function verificarMatricula() {
-        var matricula = document.getElementById("matriculaPerfil").value.trim();
+        var matricula = document
+          .getElementById("matriculaPerfil")
+          .value.trim()
+          .toUpperCase();
         var header = document.getElementById("idH1");
         var paragraph = document.getElementById("idP");
         for (let index = 0; index < matriculas.length; index++) {
           var element = matriculas[index];
-          if (matricula == element) {
-            if (element == "12221BCC037") {
+          if (matricula === element) {
+            if (element === "12221BCC037") {
               header.innerHTML = "Bioinformática";
               paragraph.innerHTML =
                 "Usa métodos computacionais para desvendar e melhorar a análise genética, bioquímica, farmacológica , neural entre outras várias subáreas mais específicas.";
-            } else if (element == "12321BCC024") {
+            } else if (element === "12321BCC024") {
               header.innerHTML = "Perícia Criminal";
               paragraph.innerHTML =
                 "Profissional responsável por investigar crimes virtuais e analisar vestígios digitais para produzir provas técnicas válidas em investigações e processos judiciais.";
-            } else if (element == "12321BCC038") {
+            } else if (element === "12321BCC038") {
               header.innerHTML = "Aprendizado de Máquina";
               paragraph.innerHTML =
                 "Área da inteligência artificial focada em algoritmos capazes de aprender com dados e realizar inferências precisas sobre novos dados, sem instruções codificadas manualmente.";
-            } else if (element == "12321BCC043") {
+            } else if (element === "12321BCC043") {
               header.innerHTML = "Banco de Dados";
               paragraph.innerHTML =
                 "O administrador de banco de dados é um profissional que garante a segurança, a integridade e uma alta performance dos sistemas de dado de uma empresa por meio de backups, softwares e otimização.";
-            } else if (element == "12311BCC069") {
+            } else if (element === "12311BCC069") {
               header.innerHTML = "DevOps";
               paragraph.innerHTML =
                 "Foca em automatizar processos, integrar equipes e acelerar a entrega de softwares com segurança e estabilidade por meio de nuvem e cultura ágil.";
-            } else if (element == "Faltou") {
-              header.innerHTML = "";
-              paragraph.innerHTML = "";
+            } else if (element === "12111BSI285") {
+              header.innerHTML = "Engenheiro de automação";
+              paragraph.innerHTML =
+                "Desenvolvimento de sistemas para automatizar rotinas manuais, detecção de fraudes e aplicar modelos preditivos na gestão corporativa.";
             }
 
             return;
@@ -186,6 +190,8 @@
         header.innerHTML = "";
         paragraph.innerHTML =
           "Matrícula não existe, inserir uma matrícula válida";
+        paragraph.style.color = "red";
+        paragraph.style.fontWeight = "bold";
       }
     </script>
 
