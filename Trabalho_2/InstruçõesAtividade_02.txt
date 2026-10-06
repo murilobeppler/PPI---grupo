@@ -1,0 +1,16 @@
+Instruções
+1. Crie um código em JavaScript (JS) que use uma estrutura condicional switch. Os case devem corresponder ao nº de matrícula de cada integrante. Use a página HTML do exercício anterior, que deverá conter um campo de entrada (<input type='text'>) para receber o número de matrícula do discente. O código JS deverá verificar o nº de matrícula digitado e, ao clicar em um botão (type=’button’), executar a estrutura switch. Se o nº informado corresponder ao de um dos integrantes do grupo, a foto desse discente deverá ser mostrada na página HTML. Caso a matrícula não seja encontrada, então uma mensagem apropriada deverá ser mostrada ao usuário da pesquisa.
+
+Foi desenvolvida na pagina cadastro.html
+
+2. Crie um código em JavaScript que use estrutura condicional if-else. A página HTML a ser utilizada é a do exercício de perfil, deverá conter um campo de entrada (<input type="text">) para receber o número de matrícula do aluno. O código JavaScript deverá verificar o número de matrícula digitado e compará-lo com as matrículas dos alunos, armazenadas em uma estrutura de dados (como um array), usando uma estrutura de repetição for. Se o nº digitado corresponder à matrícula de um dos integrantes, a página deverá exibir o nome da vaga profissional que esse integrante almeja ocupar e uma descrição, em um parágrafo, das atividades desempenhadas por esse profissional em um ambiente de TI. O nome da vaga e a descrição exibidos inicialmente na página deverão ser substituídos pelo conteúdo correspondente ao aluno identificado. Caso a matrícula não seja encontrada, uma mensagem deverá ser mostrada ao usuário.
+
+Foi desenvolvida na pagina perfil.html
+
+Grupo 06:
+Erick da Silva Marques
+Maria Rita Vieira Souza
+Ayato Botelho Lima
+Vinicius Teodoro Goulart
+Murilo Alves Beppler
+Luís Felipe de Oliveira

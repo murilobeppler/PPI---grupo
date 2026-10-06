@@ -1,0 +1,17 @@
+Cada grupo deve escolher um contexto (ex: clube de leitura, empresa de tecnologia, loja online, etc.) e adaptar as tarefas se necessário. 
+
+1. Use o código JavaScript da semana passada que tem a estrutura condicional switch e o campo de entrada (<input type='text'>) para receber o nº de matrícula do discente. Ao clicar no botão (type='button'), se o nº corresponder ao de um dos integrantes, a foto do discente deve ser exibida na página HTML. Crie um evento ‘click’, onde após um clique sobre a foto do discente atual, deve-se mostrar próxima foto dos discentes na sequência, alterando uma de cada vez. 
+
+Foi desenvolvida na pagina cadastro.html
+
+2. Crie um código em JavaScript que estruture uma página HTML com um formulário. Os campos de entrada (<input type='text'>) devem refletir os futuros campos do Cadastro do Projeto em seu contexto. Todos os campos de entrada devem ser obrigatórios, e o primeiro campo deve usar o evento ‘focus’. Ao clicar no botão (type='button'), e tendo os campos validados, mostre todos os valores dos campos abaixo do botão com o título "Relatório do Cadastro" e uma imagem correspondente a um campo que foi selecionado no Cadastro. A imagem em específico pode variar na página HTML, pois depende do campo <select> que será útil ter no Cadastro para variar a imagem.
+
+
+
+Grupo 06:
+Erick da Silva Marques
+Maria Rita Vieira Souza
+Ayato Botelho Lima
+Vinicius Teodoro Goulart
+Murilo Alves Beppler
+Luís Felipe de Oliveira

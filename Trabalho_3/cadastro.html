@@ -226,16 +226,34 @@
         src=""
         alt=""
         id="idIMG"
-        style="display: none; width: 250px; height: 250px"
+        style="display: none; width: 250px; height: 250px; cursor: pointer"
       />
       <p id="mensagemErro" style="display: none"></p>
 
       <script>
+        let matriculas = [
+          "12221BCC037",
+          "12321BCC024",
+          "12321BCC038",
+          "12321BCC043",
+          "12311BCC069",
+          "12111BSI285",
+        ];
+
+        var indiceAtual = -1;
+
         function verificarMatricula() {
           var matricula = document
             .getElementById("matricula")
             .value.trim()
             .toUpperCase();
+
+          indiceAtual = matriculas.indexOf(matricula);
+
+          exibirAlunos(matricula);
+        }
+
+        function exibirAlunos(matricula) {
           var imagem = document.getElementById("idIMG");
           var mensagemErro = document.getElementById("mensagemErro");
 
@@ -286,6 +304,17 @@
               break;
           }
         }
+
+        document.getElementById("idIMG").addEventListener("click", function () {
+          if (indiceAtual !== -1) {
+            indiceAtual = (indiceAtual + 1) % matriculas.length;
+            let proximaMatricula = matriculas[indiceAtual];
+
+            document.getElementById("matricula").value = proximaMatricula;
+
+            exibirAlunos(proximaMatricula);
+          }
+        });
       </script>
     </section>
   </body>
