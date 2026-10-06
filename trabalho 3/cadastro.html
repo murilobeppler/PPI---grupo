@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="matriculaIFELSE.js"></script>
+    <title>Cadastro: Usuário</title>
+  </head>
+  <body
+    style="
+      background-color: pink;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 3px;
+    "
+  >
+    <header>
+      <h1>CriArte</h1>
+      <nav>
+        <a href="perfil.html">Início</a> |
+        <a href="formulario.html">Cadastro de receita</a> |
+        <a href="contato.html">Contato</a> 
+      </nav>
+    </header>
+    <form
+      action="placeholderTratemento"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <fieldset>
+        <legend>Cadastro de Usuário</legend>
+        <label for="user">Nome: </label>
+        <br />
+        <input
+          type="text"
+          name="user"
+          placeholder="Inserir nome identificador"
+          id="user"
+          required
+        />
+        <br />
+        <label for="usuario">Usuário </label>
+        <br />
+        <input
+          type="text"
+          name="Usuário"
+          placeholder="Inserir usuário"
+          id="usuario"
+          required
+        />
+        <br />
+        <p>Gênero:</p>
+        <input
+          type="radio"
+          name="sexo"
+          id="masculino"
+          value="masculino"
+          required
+        />
+        <label for="masculino">Masculino</label>
+        <input
+          type="radio"
+          name="sexo"
+          id="feminino"
+          value="feminino"
+          required
+        />
+        <label for="feminino">Feminino</label>
+        <input type="radio" name="sexo" id="outro" value="outro" required />
+        <label for="outro">Outro / Prefiro não informar</label>
+        <br />
+        <label for="email">Email: </label>
+        <br />
+        <input
+          type="email"
+          name="email"
+          placeholder="exemplo@exemplo.com"
+          id="email"
+        />
+        <br />
+        <label for="senha">Senha: </label>
+        <br />
+        <input
+          type="password"
+          name="senha"
+          placeholder="Inserir senha"
+          id="senha"
+          required
+        />
+        <br />
+        <label for="telefone">Contato: </label>
+        <br />
+        <input
+          type="tel"
+          name="telefone"
+          placeholder="Inserir número de telefone"
+          id="telefone"
+        />
+        <br />
+        <label for="perfil">Imagem de Perfil</label>
+        <br />
+        <input
+          type="file"
+          name="perfil"
+          id="perfil"
+          accept="image/png, image/jpeg"
+        />
+        <br />
+        Habilidades:
+        <select name="type" id="type" required>
+          <option value="" selected disabled>Selecione a habilidade</option>
+          <option value="tailoring">Costura</option>
+          <option value="crochet">Crochê</option>
+          <option value="knitting">Tricô</option>
+          <option value="painting">Pintura</option>
+          <option value="ceramics">Cerâmica</option>
+          <option value="other">Outro</option>
+        </select>
+        <br />
+        <label for="termos">Aceito os termos de uso da Empresa</label>
+        <input type="checkbox" name="termos" id="termos" required />
+        <br />
+        <button type="submit">Enviar</button>
+        <br />
+        <button type="reset">Resetar</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cadastro da loja</legend>
+        <label for="loja">Nome da Loja: </label>
+        <br />
+        <input
+          type="text"
+          name="loja"
+          placeholder="Inserir noma de loja"
+          id="loja"
+          required
+        />
+        <br />
+        <label for="fotoloja">Imagem de perfil loja: </label>
+        <br />
+        <input
+          type="file"
+          name="fotoloja"
+          id="fotoloja"
+          accept="image/png, image/jpeg"
+        />
+        <br />
+        <label for="descricao"> Descrição: </label>
+        <br />
+        <textarea
+          name="descricao"
+          rows="15"
+          cols="40"
+          placeholder="Digite aqui uma breve descrição da sua loja..."
+          id="descricao"
+        >
+        </textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cadastro dos produtos</legend>
+        <br />
+        <label for="produto">Nome: </label>
+        <br />
+        <input
+          type="text"
+          name="produto"
+          id="produto"
+          placeholder="Inserir nome do produto"
+          required
+        />
+        <br />
+        <label for="midia">Ficheiro Multimédia (Imagem ou Vídeo):</label><br />
+        <input type="file" id="midia" name="midia" accept="image/*,video/*" />
+        <br />
+        <label for="preco">Preco: </label>
+        <br />
+        <input type="number" name="preco" id="preco" min="0" step="any" />
+        <br />
+        <label for="descricaoProduto">Descricao: </label>
+        <br />
+        <textarea
+          name="descricaoProduto"
+          id="descricaoProduto"
+          placeholder="Digite a descrição do seu produto..."
+          required
+        >
+        </textarea>
+        <br />
+        <label for="linkTutorial">Link do Tutorial / Produto:</label><br />
+        <input
+          type="url"
+          id="linkTutorial"
+          name="link_tutorial"
+          placeholder="https://placeholder.com"
+        />
+        <br />
+        <label for="pdf">PDF receita: </label>
+        <br />
+        <input
+          type="file"
+          name="pdf"
+          id="pdf"
+          required
+          accept="application/pdf"
+        />
+        <br />
+        <label for="data">Data: </label>
+        <br />
+        <input type="date" name="data" id="data" />
+      </fieldset>
+    </form>
+
+    <section>
+      <h3>Verifica a matrícula</h3>
+      <label for="matricula">Inserir Matrícula: </label>
+      <input
+        type="text"
+        name="Matricula"
+        id="matricula"
+        placeholder="Inserir matrícula"
+        required
+      />
+      <button type="button" onclick="verificarMatricula()">Verificar</button>
+      <img
+        src=""
+        alt=""
+        id="idIMG"
+        style="display: none; width: 250px; height: 250px; cursor: pointer"
+      />
+      <p id="mensagemErro" style="display: none"></p>
+
+      <script>
+        let matriculas = [
+          "12221BCC037",
+          "12321BCC024",
+          "12321BCC038",
+          "12321BCC043",
+          "12311BCC069",
+          "12111BSI285",
+        ];
+
+        var indiceAtual = -1;
+
+        function verificarMatricula() {
+          var matricula = document
+            .getElementById("matricula")
+            .value.trim()
+            .toUpperCase();
+
+          indiceAtual = matriculas.indexOf(matricula);
+
+          exibirAlunos(matricula);
+        }
+
+        function exibirAlunos(matricula) {
+          var imagem = document.getElementById("idIMG");
+          var mensagemErro = document.getElementById("mensagemErro");
+
+          imagem.style.display = "block";
+          mensagemErro.style.display = "none";
+
+          switch (matricula) {
+            case "12221BCC037":
+              imagem.src = "images/Murilo.jpg";
+              imagem.alt = "Imagem de 12221BCC037";
+              break;
+
+            case "12321BCC024":
+              imagem.src = "images/Maria_Rita.jpeg";
+              imagem.alt = "Imagem de 12321BCC024";
+              break;
+
+            case "12321BCC038":
+              imagem.src = "images/Erick.jpeg";
+              imagem.alt = "Imagem de 12321BCC038";
+              break;
+
+            case "12321BCC043":
+              imagem.src = "images/Ayato.jpg";
+              imagem.alt = "Imagem de 12321BCC043";
+              break;
+
+            case "12311BCC069":
+              imagem.src = "images/Luis_Felipe.jpg";
+              imagem.alt = "Imagem de 12311BCC069";
+              break;
+
+            case "12111BSI285":
+              imagem.src = "images/Vinicius.jpeg";
+              imagem.alt = "Imagem de 12111BSI285";
+              break;
+
+            default:
+              imagem.style.display = "none";
+              imagem.src = "";
+              imagem.alt = "";
+
+              mensagemErro.innerHTML =
+                "Matrícula não existe, inserir uma matrícula válida";
+              mensagemErro.style.color = "red";
+              mensagemErro.style.fontWeight = "bold";
+              mensagemErro.style.display = "block";
+              break;
+          }
+        }
+
+        document.getElementById("idIMG").addEventListener("click", function () {
+          if (indiceAtual !== -1) {
+            indiceAtual = (indiceAtual + 1) % matriculas.length;
+            let proximaMatricula = matriculas[indiceAtual];
+
+            document.getElementById("matricula").value = proximaMatricula;
+
+            exibirAlunos(proximaMatricula);
+          }
+        });
+      </script>
+    </section>
+  </body>
+</html>

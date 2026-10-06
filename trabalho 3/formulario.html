@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="matriculaIFELSE.js"></script>
+    <title>Cadastro: Receita</title>
+
+
+    <script>
+        function gerarRelatorio() {
+            const camposIds = ["codigo", "nome", "type", "criador", "fotoproduto", "descricao", "materiais", "data", "preco", "pdf"];
+            const camposNomes = ["Código", "Nome", "Tipo de artesanato", "Criador", "Foto do produto", "Descrição", "Lista de materiais", "Data", "Preço", "PDF da receita"];
+
+            for (let i = 0; i < camposIds.length; i++) {
+                let campo = document.getElementById(camposIds[i]);
+                if (campo.value == "") {
+                    alert("O campo " + camposNomes[i] + " é obrigatório :(");
+                    campo.focus();
+                    break;
+                }
+            }
+
+            const tipoSelect = document.getElementById("type").value;
+            let img = "";
+
+            switch (tipoSelect) {
+                case "tailoring":
+                    img = "craftwork_images/tailoring.png";
+                    break;
+                case "crochet":
+                    img = "craftwork_images/crochet.png";
+                    break;
+                case "knitting":
+                    img = "craftwork_images/knitting.png";
+                    break;
+                case "painting":
+                    img = "craftwork_images/painting.png";
+                    break;
+                case "ceramics":
+                    img = "craftwork_images/ceramics.png";
+                    break;
+                default:
+                    img = "craftwork_images/other.png";
+            }
+
+
+            let relatorioHTML = "<hr> <h2>Relatório do Cadastro</h2>";
+            relatorioHTML += "<h3>Dados da receita <img src='"+img +"' alt='Ícone do artesanato' style='height: 30px; vertical-align: middle; margin-left: 10px;'></h3>";
+            let valorPreenchido = null;
+            for (let j = 0; j < camposIds.length; j++) {
+                if(camposIds[j]=="fotoproduto"){
+                    let arquivo = document.getElementById(camposIds[j]).files[0];
+                    relatorioHTML += 
+                        "<p><strong>Foto do produto:</strong></p>"+
+                        "<img src='" + URL.createObjectURL(arquivo)+"' " +
+                        "alt='Foto do produto' " +
+                        "style='max-width: 400px; max-height: 400px;'>" +
+                        "<br>";
+                }
+                else if(camposIds[j]=="pdf"){
+                    let arquivo = document.getElementById(camposIds[j]).files[0];
+                    relatorioHTML +=
+                        "<p><strong>PDF da receita:</strong> "+
+                        "<a href='" + URL.createObjectURL(arquivo)+"' "+
+                        "target='_blank'>"+
+                        arquivo.name+
+                        "</a></p>";
+                }
+                else{
+                    valorPreenchido = document.getElementById(camposIds[j]).value;
+                    relatorioHTML += "<p><strong>" + camposNomes[j] + ":</strong> " + valorPreenchido + "</p>";
+                }
+            }
+            document.getElementById("areaRelatorio").innerHTML = relatorioHTML;
+        }
+    </script>
+</head>
+
+<body style="
+      background-color: pink;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 3px;
+    ">
+    <header>
+        <h1>CriArte</h1>
+        <nav>
+            <a href="perfil.html">Início</a> |
+            <a href="cadastro.html">Cadastro de usuário</a> |
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+    <hr>
+    <section>
+        <form id="formReceita">
+            <h4>Cadastro de Receita</h4>
+
+            <label for="codigo">Código: </label>
+            <br />
+            <input type="text" id="codigo" name="codigo" placeholder="Inserir código" required
+                onfocus="this.style.backgroundColor='#ffe4e1'" onblur="this.style.backgroundColor='white'" />
+            <br />
+
+            <label for="nome">Nome: </label>
+            <br />
+            <input type="text" id="nome" name="nome" placeholder="Inserir nome da receita" required />
+            <br />
+
+            <label for="type">Tipo de Artesanato:</label>
+            <br />
+            <select name="type" id="type" required>
+                <option value="" selected disabled>Selecione o artesanato</option>
+                <option value="tailoring">Costura</option>
+                <option value="crochet">Crochê</option>
+                <option value="knitting">Tricô</option>
+                <option value="painting">Pintura</option>
+                <option value="ceramics">Cerâmica</option>
+                <option value="other">Outro</option>
+            </select>
+            <br />
+
+            <label for="criador">Criador: </label>
+            <br />
+            <input type="text" id="criador" name="criador" placeholder="Inserir nome do criador" required />
+            <br />
+
+            <label for="fotoloja">Foto do produto: </label>
+            <br />
+            <input type="file" name="fotoproduto" id="fotoproduto" accept="image/png, image/jpeg" required />
+            <br />
+
+            <label for="descricao"> Descrição: </label>
+            <br />
+            <textarea name="descricao" rows="15" cols="40" placeholder="Digite aqui breve descrição da sua receita..."
+                id="descricao" required></textarea>
+            <br />
+
+            <label for="materiais">Lista de materiais: </label>
+            <br />
+            <textarea name="materiais" rows="15" cols="40" placeholder="Digite aqui os materiais necessários."
+                id="materiais" required></textarea>
+            <br />
+
+            <label for="data">Data: </label>
+            <br />
+            <input type="date" name="data" id="data" required />
+            <br />
+
+            <label for="preco">Preço: </label>
+            <br />
+            <input type="text" id="preco" name="preco" placeholder="Valor da receita (em reais)" required />
+            <br />
+
+            <label for="pdf">PDF da receita: </label>
+            <br />
+            <input type="file" name="pdf" id="pdf" required />
+            <br /><br />
+
+            <button type="button" onclick="gerarRelatorio()">Enviar Relatório</button>
+        </form>
+    </section>
+    <section>
+        <div id="areaRelatorio"></div>
+    </section>
+</body>
+
+</html>

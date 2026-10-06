@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CriArte - Comunidade e Marketplace de Artesanato</title>
+  </head>
+
+  <body
+    style="
+      background-color: pink;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 3px;
+    "
+  >
+    <header>
+      <h1>CriArte</h1>
+      <nav>
+        <a href="perfil.html">Início</a> | <a href="contato.html">Contato</a> |
+        <a href="cadastro.html">Cadastro de usuário</a> | <a href="formulario.html">Cadastro de receita</a>
+      </nav>
+    </header>
+    <hr />
+
+    <section>
+      <p>
+        O CriArte é um site de marketplace e comunidade digital focado no nicho
+        de artesanato, como crochê, bordado, tricô, macramê, escultura,
+        bijuteria e costura. Nosso foco é unir artesãos, permitindo a venda de
+        receitas e tutoriais, criação de um portifólio e interação com os
+        projetos de outros usuários, permitindo compartilhar técnicas novas,
+        dicas e inspirações.
+      </p>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Projetos da Comunidade</h2>
+      <div style="display: flex; gap: 20px">
+        <article style="border: 1px solid black; width: 71%">
+          <h3>Blusa de crochê</h3>
+          <p>Postado por <b>Club atelie</b> em 10 de Setembro de 2026</p>
+          <p>Fiz essa blusa linda de crochê usando a linha Anne!</p>
+          <figure>
+            <img
+              src="https://images4-g-cdn.ravelrycache.com/flickr/5/5/0/5507701316/5507701316_n.jpg"
+              title="Frente da blusa de crochê"
+              alt="Frente da blusa de crochẽ"
+              width="300"
+              height="300"
+            />
+            <img
+              src="https://images4-f-cdn.ravelrycache.com/flickr/5/5/0/5507102185/5507102185_n.jpg"
+              title="Costas da blusa de crochê"
+              alt="Costas da blusa de crochẽ"
+              width="300"
+              height="300"
+            />
+          </figure>
+        </article>
+
+        <aside style="border: 1px solid black; width: 29%">
+          <h3 align="center">Artesãos destaque do mês de setembro</h3>
+          <ol>
+            <li>atelie.world</li>
+            <li>Tokyo_arte</li>
+            <li>Brasileiridades</li>
+            <li>arte_house</li>
+            <li>Club atelie</li>
+          </ol>
+        </aside>
+      </div>
+      <br />
+      <article style="border: 1px solid black; width: 70%">
+        <h3>Pikachu de Amigurumi</h3>
+        <p>Postado por <b>Lótus Crafts</b> em 23 de Setembro de 2026</p>
+        <p>
+          Fiz esse projeto de amigurumi e decidi gravar um tutorial para quem
+          estiver interessado. Ele é ótimo para iniciantes!
+        </p>
+        <iframe
+          width="640"
+          height="480"
+          src="https://www.youtube.com/embed/RAe7kbfgePA"
+          >O vídeo não pode ser tocado.</iframe
+        >
+      </article>
+    </section>
+    <hr />
+
+    <section>
+      <h2>Destaques da Semana - Receitas Mais Vendidas</h2>
+      <table border="2" width="80%">
+        <tr>
+          <th>Nome da Receita</th>
+          <th>Criador</th>
+          <th>Valor</th>
+          <th>Tipo de artesanato</th>
+        </tr>
+        <tr>
+          <td>Magikarp Go!</td>
+          <td>atelie.world</td>
+          <td>R$ 10,00</td>
+          <td>Crochê</td>
+        </tr>
+        <tr>
+          <td>Daisy Chain Scarf</td>
+          <td>Tokyo_arte</td>
+          <td>R$ 15,00</td>
+          <td>Tricô</td>
+        </tr>
+        <tr>
+          <td>THE Beanie</td>
+          <td>Club Atelie</td>
+          <td>R$ 22,50</td>
+          <td>Crochê</td>
+        </tr>
+        <tr>
+          <td>Embroidered beetle</td>
+          <td>arte_house</td>
+          <td>R$ 18,00</td>
+          <td>Bordado</td>
+        </tr>
+      </table>
+    </section>
+    <hr />
+
+    <section>
+      <label for="matriculaPerfil">Inserir matrícula: </label>
+      <input
+        type="text"
+        name="MatriculaPerfil"
+        id="matriculaPerfil"
+        placeholder="Inserir matrícula"
+        required
+      />
+      <button type="button" onclick="verificarMatricula()">Verificar</button>
+      <h2 id="idH1" style="display: none"></h2>
+      <p id="idP" style="display: none"></p>
+      <p id="mensagemErro" style="display: none"></p>
+
+      <script>
+        let matriculas = [
+          "12221BCC037",
+          "12321BCC024",
+          "12321BCC038",
+          "12321BCC043",
+          "12311BCC069",
+          "12111BSI285",
+        ];
+
+        function verificarMatricula() {
+          var matricula = document
+            .getElementById("matriculaPerfil")
+            .value.trim()
+            .toUpperCase();
+          var header = document.getElementById("idH1");
+          var paragraph = document.getElementById("idP");
+          var mensagemErro = document.getElementById("mensagemErro");
+          
+          header.style.display = "block";
+          paragraph.style.display = "block";
+          mensagemErro.style.display = "none";
+          
+          for (let index = 0; index < matriculas.length; index++) {
+            var element = matriculas[index];
+            
+            if (matricula === element) {
+              if (element === "12221BCC037") {
+                header.innerHTML = "Bioinformática";
+                paragraph.innerHTML =
+                  "Usa métodos computacionais para desvendar e melhorar a análise genética, bioquímica, farmacológica , neural entre outras várias subáreas mais específicas.";
+              } else if (element === "12321BCC024") {
+                header.innerHTML = "Perícia Criminal";
+                paragraph.innerHTML =
+                  "Profissional responsável por investigar crimes virtuais e analisar vestígios digitais para produzir provas técnicas válidas em investigações e processos judiciais.";
+              } else if (element === "12321BCC038") {
+                header.innerHTML = "Aprendizado de Máquina";
+                paragraph.innerHTML =
+                  "Área da inteligência artificial focada em algoritmos capazes de aprender com dados e realizar inferências precisas sobre novos dados, sem instruções codificadas manualmente.";
+              } else if (element === "12321BCC043") {
+                header.innerHTML = "Banco de Dados";
+                paragraph.innerHTML =
+                  "O administrador de banco de dados é um profissional que garante a segurança, a integridade e uma alta performance dos sistemas de dado de uma empresa por meio de backups, softwares e otimização.";
+              } else if (element === "12311BCC069") {
+                header.innerHTML = "DevOps";
+                paragraph.innerHTML =
+                  "Foca em automatizar processos, integrar equipes e acelerar a entrega de softwares com segurança e estabilidade por meio de nuvem e cultura ágil.";
+              } else if (element === "12111BSI285") {
+                header.innerHTML = "Engenheiro de automação";
+                paragraph.innerHTML =
+                  "Desenvolvimento de sistemas para automatizar rotinas manuais, detecção de fraudes e aplicar modelos preditivos na gestão corporativa.";
+              }
+
+              return;
+            }
+          }
+
+          header.innerHTML = "";
+          paragraph.innerHTML = "";
+          header.style.display = "none";
+          paragraph.style.display = "none";
+
+          mensagemErro.innerHTML =
+            "Matrícula não existe, inserir uma matrícula válida";
+          mensagemErro.style.display = "block";
+          mensagemErro.style.color = "red";
+          mensagemErro.style.fontWeight = "bold";
+        }
+      </script>
+    </section>
+    <hr />
+    <footer>
+      <p>&copy; 2026 CriArte - Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
