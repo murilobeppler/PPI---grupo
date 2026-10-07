@@ -233,10 +233,10 @@
 
       <script>
         let matriculas = [
-          "12221BCC037",
-          "12321BCC024",
-          "12321BCC038",
           "12321BCC043",
+	  "12321BCC038",
+          "12321BCC024",
+          "12221BCC037",
           "12311BCC069",
           "12111BSI285",
         ];
@@ -262,24 +262,25 @@
           mensagemErro.style.display = "none";
 
           switch (matricula) {
-            case "12221BCC037":
-              imagem.src = "images/Murilo.jpg";
-              imagem.alt = "Imagem de 12221BCC037";
-              break;
 
-            case "12321BCC024":
-              imagem.src = "images/Maria_Rita.jpeg";
-              imagem.alt = "Imagem de 12321BCC024";
+	    case "12321BCC043":
+              imagem.src = "images/Ayato.jpg";
+              imagem.alt = "Imagem de 12321BCC043";
               break;
 
             case "12321BCC038":
               imagem.src = "images/Erick.jpeg";
               imagem.alt = "Imagem de 12321BCC038";
               break;
+             
+            case "12321BCC024":
+              imagem.src = "images/Maria_Rita.jpeg";
+              imagem.alt = "Imagem de 12321BCC024";
+              break;
 
-            case "12321BCC043":
-              imagem.src = "images/Ayato.jpg";
-              imagem.alt = "Imagem de 12321BCC043";
+            case "12221BCC037":
+              imagem.src = "images/Murilo.jpg";
+              imagem.alt = "Imagem de 12221BCC037";
               break;
 
             case "12311BCC069":
