@@ -6,16 +6,13 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/NOME_DO_BANCO?useTimezone=true&serverTimezone=UTC"; // ATUALAIZAR
-                                                                                                                       // O
-                                                                                                                       // NOME
-    private static final String USER = ""; // ATUALIZAR O USUARIO
-    private static final String PASSWORD = ""; // ATUALIZAR A SENHA
+    private static final String URL = "jdbc:mysql://localhost:3306/criarte?useSSL=false&useTimezone=true&serverTimezone=UTC";
+    private static final String USER = "root"; // ATUALIZAR O USUARIO
+    private static final String PASSWORD = "12345678"; // ATUALIZAR A SENHA
 
     public static Connection getConnection() {
         try {
-            // Carrega o driver do MySQL
-            Class.forName("com.mysql.cj.jdbc.Driver"); // ATUALIZAR O DRIVE DO MYSQL EM LIB OU POW.XML
+            Class.forName("com.mysql.jdbc.Driver");
             return DriverManager.getConnection(URL, USER, PASSWORD);
 
         } catch (ClassNotFoundException e) {
