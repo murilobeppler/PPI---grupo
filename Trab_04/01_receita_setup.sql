@@ -1,4 +1,3 @@
--- SQLBook: Code
 CREATE TABLE criarte.usuario (
     id INT AUTO_INCREMENT PRIMARY KEY, 
     nome VARCHAR(100) NOT NULL,
@@ -11,7 +10,7 @@ CREATE TABLE criarte.usuario (
     aceita_termos BOOLEAN DEFAULT TRUE,
     ativo BOOLEAN DEFAULT TRUE,
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ultimo_acesso TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ultimo_acesso TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     );
 
 CREATE TABLE criarte.loja (
@@ -31,7 +30,7 @@ CREATE TABLE criarte.receita (
     codigo VARCHAR(7) UNIQUE NOT NULL,
     nome VARCHAR(100) NOT NULL,
     tipo VARCHAR(50) CHECK (tipo IN ('Costura', 'Crochê', 'Tricô', 'Bordado', 'Cerâmica', 'Escultura', 'Desenho', 'Outros')),
-    preco NUMERIC(10,2),
+    preco DECIMAL(10,2),
     descricao TEXT,
     resumo VARCHAR(100),
     materiais TEXT,
