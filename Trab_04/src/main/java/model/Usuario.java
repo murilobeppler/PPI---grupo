@@ -5,6 +5,7 @@ public class Usuario {
     private String nome;
     private String email;
     private String username;
+    private String senha;
 
     public Usuario() {
     }
@@ -45,5 +46,13 @@ public class Usuario {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }

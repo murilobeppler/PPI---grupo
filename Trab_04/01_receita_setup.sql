@@ -1,7 +1,6 @@
-CREATE DATABASE criarte;
-
+-- SQLBook: Code
 CREATE TABLE criarte.usuario (
-    id AUTO_INCREMENT PRIMARY KEY, 
+    id INT AUTO_INCREMENT PRIMARY KEY, 
     nome VARCHAR(100) NOT NULL,
     username VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -16,7 +15,7 @@ CREATE TABLE criarte.usuario (
     );
 
 CREATE TABLE criarte.loja (
-    id AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INTEGER UNIQUE NOT NULL,
     nome VARCHAR(100) NOT NULL,
     descricao TEXT,
@@ -27,9 +26,9 @@ CREATE TABLE criarte.loja (
 );
 
 CREATE TABLE criarte.receita (
-    id AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INTEGER NOT NULL,
-    codigo VARCHAR(7) DEFAULT criarte.gerar_codigo_receita() UNIQUE NOT NULL,
+    codigo VARCHAR(7) UNIQUE NOT NULL,
     nome VARCHAR(100) NOT NULL,
     tipo VARCHAR(50) CHECK (tipo IN ('Costura', 'Crochê', 'Tricô', 'Bordado', 'Cerâmica', 'Escultura', 'Desenho', 'Outros')),
     preco NUMERIC(10,2),
@@ -43,7 +42,7 @@ CREATE TABLE criarte.receita (
 );
 
 CREATE TABLE criarte.galeria (
-    id AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     receita_id INTEGER NOT NULL,
     url_imagem VARCHAR(255) NOT NULL,   
     CONSTRAINT fk_galeria_receita FOREIGN KEY (receita_id) REFERENCES criarte.receita(id) ON DELETE CASCADE
