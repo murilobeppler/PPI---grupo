@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro: Receita</title>
+
+
+    <script>
+        function gerarRelatorio() {
+            const camposIds = ["codigo", "nome", "tipo", "usuario_id", "preco", "descricao", "resumo", "materiais", "url_video", "url_pdf", "criado_em"];
+            const camposNomes = ["Código", "Nome", "Tipo de artesanato", "Criador (ID do Usuário)", "Preço", "Descrição", "Resumo", "Lista de materiais", "Link do vídeo", "PDF da receita", "Data da criação"];
+
+            for (let i = 0; i < camposIds.length; i++) {
+                let campo = document.getElementById(camposIds[i]);
+                if (campo.value == "") {
+                    alert("O campo " + camposNomes[i] + " é obrigatório :(");
+                    campo.focus();
+                    return;
+                }
+            }
+
+            const tipoSelect = document.getElementById("tipo").value;
+            let img = "";
+
+            switch (tipoSelect) {
+                case "Costura":
+                    img = "assets/craftwork_images/tailoring.png";
+                    break;
+                case "Crochê":
+                    img = "assets/craftwork_images/crochet.png";
+                    break;
+                case "Tricô":
+                    img = "assets/craftwork_images/knitting.png";
+                    break;
+                case "Bordado":
+                    img = "assets/craftwork_images/other.png";
+                    break;
+                case "Cerâmica":
+                    img = "assets/craftwork_images/ceramics.png";
+                    break;
+                default:
+                    img = "assets/craftwork_images/other.png";
+            }
+
+
+            let relatorioHTML = "<hr> <h2>Relatório do Cadastro</h2>";
+            relatorioHTML += "<h3>Dados da receita <img src='" + img + "' alt='Ícone do artesanato' style='height: 30px; vertical-align: middle; margin-left: 10px;'></h3>";
+            let valorPreenchido = null;
+            for (let j = 0; j < camposIds.length; j++) {
+                if (camposIds[j] == "url_pdf") {
+                    let arquivo = document.getElementById(camposIds[j]).files[0];
+                    relatorioHTML +=
+                        "<p><strong>PDF da receita:</strong> " +
+                        "<a href='" + URL.createObjectURL(arquivo) + "' " +
+                        "target='_blank'>" +
+                        arquivo.name +
+                        "</a></p>";
+                }
+                else {
+                    valorPreenchido = document.getElementById(camposIds[j]).value.trim();
+                    relatorioHTML += "<p><strong>" + camposNomes[j] + ":</strong> " + valorPreenchido + "</p>";
+                }
+            }
+            document.getElementById("areaRelatorio").innerHTML = relatorioHTML;
+
+            setTimeout(() => {
+                document.getElementById("formReceita").submit();
+            }, 3000);
+        }
+    </script>
+</head>
+
+<body style="
+      background-color: pink;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 3px;
+    ">
+    <header>
+        <h1>CriArte</h1>
+        <nav>
+            <a href="pagina_inicial.html">Início</a> |
+            <a href="formulario_usuario.html">Cadastro de usuário</a> |
+            <a href="formulario_loja.html">Cadastro de loja</a> |
+            <a href="formulario_galeria.html">Cadastro de galeria</a> |
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+    <hr>
+    <section>
+        <form action="CadastrarReceita" method="post" id="formReceita" enctype="multipart/form-data">
+
+            <h4>Cadastro de Receita</h4>
+
+            <label for="codigo">Código:</label>
+            <br />
+            <input type="text" id="codigo" name="codigo" placeholder="Inserir código" required />
+            <br />
+
+            <label for="nome">Nome:</label>
+            <br />
+            <input type="text" id="nome" name="nome" placeholder="Inserir nome da receita" required />
+            <br />
+
+            <label for="tipo">Tipo de artesanato:</label>
+            <br />
+            <select name="tipo" id="tipo" required>
+                <option value="" selected disabled>
+                    Selecione o artesanato
+                </option>
+                <option value="Costura">Costura</option>
+                <option value="Crochê">Crochê</option>
+                <option value="Tricô">Tricô</option>
+                <option value="Bordado">Bordado</option>
+                <option value="Cerâmica">Cerâmica</option>
+                <option value="Escultura">Escultura</option>
+                <option value="Desenho">Desenho</option>
+                <option value="Outros">Outros</option>
+            </select>
+            <br />
+
+            <label for="usuario_id">Criador (ID do Usuário):</label>
+            <br />
+            <input type="number" id="usuario_id" name="usuario_id" placeholder="Digite o ID do usuário" required />
+            <br />
+
+            <label for="preco">Preço:</label>
+            <br />
+            <input type="number" id="preco" name="preco" placeholder="Valor da receita em reais" />
+            <br />
+
+            <label for="descricao">Descrição:</label>
+            <br />
+            <textarea id="descricao" name="descricao" rows="10" cols="40"
+                placeholder="Digite a descrição da receita..."></textarea>
+            <br />
+
+            <label for="resumo">Resumo:</label>
+            <br />
+            <textarea id="resumo" name="resumo" maxlength="100" rows="3" cols="40"
+                placeholder="Resumo de até 100 caracteres"></textarea>
+            <br />
+
+            <label for="materiais">Lista de materiais:</label>
+            <br />
+            <textarea id="materiais" name="materiais" rows="10" cols="40"
+                placeholder="Digite os materiais necessários..."></textarea>
+            <br />
+
+            <label for="url_video">Link do vídeo:</label>
+            <br />
+            <input type="url" id="url_video" name="url_video" placeholder="https://exemplo.com/video" />
+            <br />
+
+            <label for="url_pdf">PDF da receita:</label>
+            <br />
+            <input type="file" id="url_pdf" name="url_pdf" accept="application/pdf" required />
+            <br />
+
+            <label for="criado_em">Data da criação:</label>
+            <br />
+            <input type="datetime-local" id="criado_em" name="criado_em" required />
+            <br />
+            <br />
+
+            <button type="button" onclick="gerarRelatorio()">
+                Enviar
+            </button>
+
+            <button type="reset">Resetar</button>
+        </form>
+    </section>
+
+    <section>
+        <div id="areaRelatorio"></div>
+    </section>
+
+    <hr>
+
+    <form action="ConsultarReceita" method="get" id="formReceitaConsulta">
+        <h4>Consulta de Receita</h4>
+
+        <label for="codigo_consulta">Código:</label>
+        <br />
+        <input type="text" id="codigo_consulta" name="codigo" placeholder="Digite o código para consultar" required />
+        <br /><br />
+        <button type="submit">Consultar</button>
+    </form>
+
+    <hr>
+
+    <form action="AlterarReceita" method="post" id="formReceitaAlteracao" enctype="multipart/form-data">
+        <h4>Alteração de Receita</h4>
+
+        <label for="codigo_alteracao">Código:</label>
+        <br />
+        <input type="text" id="codigo_alteracao" name="codigo" placeholder="Digite o código a ser alterado" required />
+        <br /><br />
+
+        <label for="nome_alteracao">Novo Nome:</label>
+        <br />
+        <input type="text" id="nome_alteracao" name="nome" placeholder="Inserir novo nome" />
+        <br />
+
+        <label for="tipo_alteracao">Novo Tipo de artesanato:</label>
+        <br />
+        <select name="tipo" id="tipo_alteracao">
+            <option value="" selected disabled>Selecione o artesanato</option>
+            <option value="Costura">Costura</option>
+            <option value="Crochê">Crochê</option>
+            <option value="Tricô">Tricô</option>
+            <option value="Bordado">Bordado</option>
+            <option value="Cerâmica">Cerâmica</option>
+            <option value="Escultura">Escultura</option>
+            <option value="Desenho">Desenho</option>
+            <option value="Outros">Outros</option>
+        </select>
+        <br />
+
+        <label for="usuario_id_alteracao">Novo Criador (ID do Usuário):</label>
+        <br />
+        <input type="number" id="usuario_id_alteracao" name="usuario_id" placeholder="Digite o novo ID" />
+        <br />
+
+        <label for="preco_alteracao">Novo Preço:</label>
+        <br />
+        <input type="number" id="preco_alteracao" name="preco" placeholder="Novo valor" />
+        <br />
+
+        <label for="descricao_alteracao">Nova Descrição:</label>
+        <br />
+        <textarea id="descricao_alteracao" name="descricao" rows="10" cols="40"
+            placeholder="Digite a nova descrição..."></textarea>
+        <br />
+
+        <label for="resumo_alteracao">Novo Resumo:</label>
+        <br />
+        <textarea id="resumo_alteracao" name="resumo" maxlength="100" rows="3" cols="40"
+            placeholder="Novo resumo de até 100 caracteres"></textarea>
+        <br />
+
+        <label for="materiais_alteracao">Nova Lista de materiais:</label>
+        <br />
+        <textarea id="materiais_alteracao" name="materiais" rows="10" cols="40"
+            placeholder="Digite os novos materiais..."></textarea>
+        <br />
+
+        <label for="url_video_alteracao">Novo Link do vídeo:</label>
+        <br />
+        <input type="url" id="url_video_alteracao" name="url_video" placeholder="https://exemplo.com/video" />
+        <br />
+
+        <label for="url_pdf_alteracao">Novo PDF da receita:</label>
+        <br />
+        <input type="file" id="url_pdf_alteracao" name="url_pdf" accept="application/pdf" />
+        <br />
+
+        <label for="criado_em_alteracao">Nova Data da criação:</label>
+        <br />
+        <input type="datetime-local" id="criado_em_alteracao" name="criado_em" />
+        <br /><br />
+
+        <button type="submit">Alterar</button>
+    </form>
+
+    <hr>
+
+    <form action="RemoverReceita" method="post" id="formReceitaRemocao">
+        <h4>Remoção de Receita</h4>
+
+        <label for="codigo_remocao">Código:</label>
+        <br />
+        <input type="text" id="codigo_remocao" name="codigo" placeholder="Digite o código para remover" required />
+        <br /><br />
+        <button type="submit">Remover</button>
+    </form>
+
+    </section>
+</body>
+
+</html>

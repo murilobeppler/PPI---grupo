@@ -1,7 +1,5 @@
-package main.java;
-
 import dao.UsuarioDAO;
-import main.java.model.Usuario;
+import model.Usuario;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +12,7 @@ public class Main {
         System.out.println("\n--- Testando Listagem ---");
         dao.listarTodos();
 
-        usuarioTeste.setId(6);
+        usuarioTeste.setId(12);
 
         System.out.println("\n--- Testando Alteração ---");
         dao.altera(usuarioTeste);
