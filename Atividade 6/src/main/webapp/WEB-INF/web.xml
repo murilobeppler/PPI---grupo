@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <welcome-file-list>
+        <welcome-file>formulario_usuario.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>Servlet Server</servlet-name>
+        <servlet-class>controller.PrimeiroServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Servlet Server</servlet-name>
+        <url-pattern>/first</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AlterarLoja</servlet-name>
+        <servlet-class>controller.AlterarLojaServlet</servlet-class>
+        <multipart-config />
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlterarLoja</servlet-name>
+        <url-pattern>/AlterarLoja</url-pattern>
+    </servlet-mapping>
+</web-app>

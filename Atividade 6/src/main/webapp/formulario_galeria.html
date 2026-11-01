@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro: Galeria</title>
+</head>
+
+<body style="
+      background-color: pink;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 3px;
+    ">
+    <header>
+        <h1>CriArte</h1>
+        <nav>
+            <a href="pagina_inicial.html">Início</a> |
+            <a href="formulario_usuario.html">Cadastro de usuário</a> |
+            <a href="formulario_receita.html">Cadastro de receita</a> |
+            <a href="formulario_loja.html">Cadastro de loja</a> |
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+    <hr>
+    <section>
+        <form action="CadastrarGaleria" method="post" id="formGaleria" enctype="multipart/form-data">
+
+            <h4>Cadastro de Galeria</h4>
+
+            <label for="receita_id">ID da receita:</label>
+            <br />
+            <input type="number" id="receita_id" name="receita_id" placeholder="Digite o ID da receita" />
+            <br />
+
+            <label for="url_imagem">Imagem da galeria:</label>
+            <br />
+            <input type="file" id="url_imagem" name="url_imagem" accept="image/*" />
+            <br />
+            <br />
+
+            <button type="submit">Enviar</button>
+
+            <button type="reset">Resetar</button>
+
+        </form>
+
+        </form>
+
+        <hr>
+
+        <form action="ConsultarGaleria" method="get" id="formGaleriaConsulta">
+            <h4>Consulta de Galeria</h4>
+
+            <label for="receita_id_consulta">ID da receita:</label>
+            <br />
+            <input type="number" id="receita_id_consulta" name="receita_id" placeholder="Digite o ID para consultar" />
+            <br />
+            <br />
+            <button type="submit">Consultar</button>
+        </form>
+
+        <hr>
+
+        <form action="AlterarGaleria" method="post" id="formGaleriaAlteracao" enctype="multipart/form-data">
+            <h4>Alteração de Galeria</h4>
+
+            <label for="receita_id_alteracao">ID da receita:</label>
+            <br />
+            <input type="number" id="receita_id_alteracao" name="receita_id" placeholder="Digite o ID a ser alterado" />
+            <br />
+
+            <label for="url_imagem_alteracao">Nova Imagem da galeria:</label>
+            <br />
+            <input type="file" id="url_imagem_alteracao" name="url_imagem" accept="image/*" />
+            <br />
+            <br />
+            <button type="submit">Alterar</button>
+        </form>
+
+        <hr>
+
+        <form action="RemoverGaleria" method="post" id="formGaleriaRemocao">
+            <h4>Remoção de Galeria</h4>
+
+            <label for="receita_id_remocao">ID da receita:</label>
+            <br />
+            <input type="number" id="receita_id_remocao" name="receita_id" placeholder="Digite o ID para remover" />
+            <br />
+            <br />
+            <button type="submit">Remover</button>
+        </form>
+    </section>
+</body>
+
+</html>
