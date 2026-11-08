@@ -33,6 +33,8 @@ public class ReceitaDAO {
 
             stmt.execute();
             stmt.close();
+
+            System.out.println("Receita inserido com sucesso!");
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao cadastrar receita: " + e.getMessage());
         }

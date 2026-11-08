@@ -16,6 +16,9 @@ public class ConnectionFactory {
             if (connection == null || connection.isClosed()) {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
+                System.out.println(">>> [1ª VEZ - INIT] Conexão CRIADA: " + connection);
+            } else {
+                System.out.println(">>> [REUSO] Reaproveitando a MESMA conexão: " + connection);
             }
             return connection;
         } catch (ClassNotFoundException e) {
@@ -29,6 +32,7 @@ public class ConnectionFactory {
     public static void fecharConexao() {
         try {
             if (connection != null && !connection.isClosed()) {
+                System.out.println(">>> [DESTROY] Encerrando a conexão: " + connection);
                 connection.close();
             }
         } catch (SQLException e) {

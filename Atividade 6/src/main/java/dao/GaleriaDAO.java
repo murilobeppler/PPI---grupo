@@ -26,6 +26,8 @@ public class GaleriaDAO {
 
             stmt.execute();
             stmt.close();
+
+            System.out.println("Galeria inserido com sucesso!");
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao cadastrar imagem na galeria: " + e.getMessage());
         }

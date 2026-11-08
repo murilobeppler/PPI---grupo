@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro: Receita</title>
+</head>
+
+<body style="
+      background-color: pink;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 3px;
+    ">
+    <header>
+        <h1>CriArte</h1>
+        <nav>
+            <a href="pagina_inicial.html">Início</a> |
+            <a href="formulario_usuario.html">Cadastro de usuário</a> |
+            <a href="formulario_receita.html">Cadastro de receita</a> |
+            <a href="formulario_galeria.html">Cadastro de galeria</a> |
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+    <hr>
+    <section>
+        <form action="CadastrarLoja" method="post" id="formLoja" enctype="multipart/form-data">
+
+            <h4>Cadastro de Loja</h4>
+
+            <label for="usuario_id">Criador (ID do usuário):</label>
+            <br />
+            <input type="number" id="usuario_id" name="usuario_id" placeholder="Digite o ID do usuário" />
+            <br />
+
+            <label for="nome">Nome da loja:</label>
+            <br />
+            <input type="text" id="nome" name="nome" placeholder="Digite o nome da loja" />
+            <br />
+
+            <label for="descricao">Descrição:</label>
+            <br />
+            <textarea id="descricao" name="descricao" rows="10" cols="40"
+                placeholder="Digite a descrição da loja..."></textarea>
+            <br />
+
+            <label for="foto_perfil">Foto de perfil:</label>
+            <br />
+            <input type="file" id="foto_perfil" name="foto_perfil" accept="image/*" />
+            <br />
+
+            <label for="ativo">Status da loja:</label>
+            <br />
+            <select id="ativo" name="ativo">
+                <option value="1" selected>Ativa</option>
+                <option value="0">Inativa</option>
+            </select>
+            <br />
+
+            <label for="criado_em">Data da criação:</label>
+            <br />
+            <input type="datetime-local" id="criado_em" name="criado_em" />
+            <br />
+            <br />
+
+            <button type="submit">Enviar</button>
+
+            <button type="reset">Resetar</button>
+
+        </form>
+
+        <hr>
+
+        <form action="ConsultarLoja" method="get" id="formLojaConsulta">
+            <h4>Consulta de Loja</h4>
+
+            <label for="loja_id_consulta">ID da Loja:</label>
+            <br />
+            <input type="number" id="loja_id_consulta" name="loja_id"
+                placeholder="Digite o ID da loja para consultar" />
+            <br />
+            <br />
+            <button type="submit">Consultar</button>
+        </form>
+
+        <hr>
+
+        <form action="AlterarLoja" method="post" id="formLojaAlteracao" enctype="multipart/form-data">
+            <h4>Alteração de Loja</h4>
+
+            <label for="loja_id_alteracao">ID da Loja:</label>
+            <br />
+            <input type="number" id="loja_id_alteracao" name="loja_id"
+                placeholder="Digite o ID da loja a ser alterada" />
+            <br /><br />
+
+            <label for="usuario_id_alteracao">Criador (ID do usuário):</label>
+            <br />
+            <input type="number" id="usuario_id_alteracao" name="usuario_id" placeholder="Novo ID do usuário" />
+            <br />
+
+            <label for="nome_alteracao">Nome da loja:</label>
+            <br />
+            <input type="text" id="nome_alteracao" name="nome" placeholder="Novo nome da loja" />
+            <br />
+
+            <label for="descricao_alteracao">Descrição:</label>
+            <br />
+            <textarea id="descricao_alteracao" name="descricao" rows="10" cols="40"
+                placeholder="Nova descrição da loja..."></textarea>
+            <br />
+
+            <label for="foto_perfil_alteracao">Foto de perfil:</label>
+            <br />
+            <input type="file" id="foto_perfil_alteracao" name="foto_perfil" accept="image/*" />
+            <br />
+
+            <label for="ativo_alteracao">Status da loja:</label>
+            <br />
+            <select id="ativo_alteracao" name="ativo">
+                <option value="1" selected>Ativa</option>
+                <option value="0">Inativa</option>
+            </select>
+            <br />
+
+            <label for="criado_em_alteracao">Data da criação:</label>
+            <br />
+            <input type="datetime-local" id="criado_em_alteracao" name="criado_em" />
+            <br />
+            <br />
+
+            <button type="submit">Alterar</button>
+        </form>
+
+        <hr>
+
+        <form action="RemoverLoja" method="post" id="formLojaRemocao">
+            <h4>Remoção de Loja</h4>
+
+            <label for="loja_id_remocao">ID da Loja:</label>
+            <br />
+            <input type="number" id="loja_id_remocao" name="loja_id" placeholder="Digite o ID da loja para remover" />
+            <br />
+            <br />
+            <button type="submit">Remover</button>
+        </form>
+    </section>
+</body>
+
+</html>
